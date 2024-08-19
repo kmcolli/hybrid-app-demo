@@ -64,14 +64,14 @@ pvc:
     name: redis-data-pvc  # Name of the PersistentVolumeClaim for Redis data
     accessMode: ReadWriteMany  # Access mode for the PVC
     storage: 10Gi  # Storage size for the PVC
-    storageClassName: ocs-storagecluster-cephfs  # Storage class name for the PVC
+    storageClassName: trident-csi  # Storage class name for the PVC
     volumeMode: Filesystem  # Volume mode for the PVC
 
   wordpressPlugins:
     name: wordpress-plugins-pvc  # Name of the PersistentVolumeClaim for WordPress plugins
     accessMode: ReadWriteMany  # Access mode for the PVC
     storage: 10Gi  # Storage size for the PVC
-    storageClassName: ocs-storagecluster-cephfs  # Storage class name for the PVC
+    storageClassName: trident-csi  # Storage class name for the PVC
     volumeMode: Filesystem  # Volume mode for the PVC
 
 deployment:
@@ -98,9 +98,9 @@ vm:
     size: medium  # Size for the Windows VM
     running: true  # Initial running state of the VM
     installationCdromUrl: 'http://example.com/win2022.iso'  # URL for the installation CDROM
-    installationCdromStorageClass: ocs-storagecluster-ceph-rbd-virtualization  # Storage class for the installation CDROM
+    installationCdromStorageClass: trident-csi  # Storage class for the installation CDROM
     installationCdromStorage: 20Gi  # Storage size for the installation CDROM
-    rootDiskStorageClass: ocs-storagecluster-ceph-rbd-virtualization  # Storage class for the root disk
+    rootDiskStorageClass: trident-csi  # Storage class for the root disk
     rootDiskStorage: 120Gi  # Storage size for the root disk
     cpuCores: 4  # Number of CPU cores for the VM
     cpuSockets: 1  # Number of CPU sockets for the VM
